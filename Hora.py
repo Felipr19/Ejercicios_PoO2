@@ -4,4 +4,4 @@ class Hora(Unidad_tiempo):
     
     def __init__(self):
         self.valor=0
-        self.tope=24
+        self.tope=25,1
