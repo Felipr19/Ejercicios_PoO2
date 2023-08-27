@@ -1,11 +1,6 @@
-from cronometro import Cronometro
+from figura import *
 
-def cronometrar(h,m,s):
-    c=Cronometro()
-    tiempo=h*(60**2)+m*60+s
-    for i in range(tiempo) :
-        c.avanzar()
-        print(f"{c.Hora.valor} : {c.Minuto.valor} : {c.Segundo.valor}")
-
-
-cronometrar(1,30,0)
+f = Cuadrado(Punto(0,0),Punto(0,5))
+f.calcular_perimetro()
+f.calcular_area()
+f.informar_popiedades()
