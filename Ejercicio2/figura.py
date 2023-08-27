@@ -33,9 +33,28 @@ class Rectangulo(Figura):
     
     def calcular_area(self):
         base = self.origen.calcular_distancia(Punto(self.fin.x , self.origen.y))
+        altura = self.origen.calcular_distancia(Punto(self.origen.x , self.fin.y))
+        self.area = base * altura
+
+    def calcular_perimetro(self):
+        base = self.origen.calcular_distancia(Punto(self.fin.x , self.origen.y))
+        altura = self.origen.calcular_distancia(Punto(self.origen.x , self.fin.y))
+        self.perimetro = 2*(base+altura)
+
 
 class Triangulo(Figura):
-    pass
+    
+    def calcular_area(self):
+        base = self.origen.calcular_distancia(Punto(self.fin.x , self.origen.y))
+        altura = self.origen.calcular_distancia(Punto(self.origen.x , self.fin.y))
+        self.area = (base * altura)/2
+
+    def calcular_perimetro(self):
+        base = self.origen.calcular_distancia(Punto(self.fin.x , self.origen.y))
+        altura = self.origen.calcular_distancia(Punto(self.origen.x , self.fin.y))
+        hipotenusa = self.origen.calcular_distancia(self.fin)
+        self.perimetro = base + altura + hipotenusa
+
 
 class Circulo(Figura):
     
@@ -45,4 +64,4 @@ class Circulo(Figura):
 
     def calcular_perimetro(self):
         radio = self.origen.calcular_distancia(self.fin)
-        self.perimetro = (radio*2) * pi
+        self.perimetro = 2 * radio * pi
