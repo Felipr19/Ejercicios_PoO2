@@ -10,7 +10,7 @@ class Banda:
         self.instrumentos=[]
 
     def agregar_musicos(self):
-        for i in range(randint(0,10)):
+        for i in range(randint(0,5)):
             self.musicos.append(Musico(i))
     
     def agregar_instrumentos(self):
@@ -25,11 +25,3 @@ class Banda:
     def tocar(self):
         for i in range(len(self.musicos)):
             print(self.musicos[i].mostrar_musico() + self.instrumentos[i].tocar_instrumento())
-
-
-band=Banda()
-band.agregar_musicos()
-band.agregar_instrumentos()
-band.afinar_instrumentos()
-print("")
-band.tocar()
